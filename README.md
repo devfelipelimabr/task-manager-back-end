@@ -1,0 +1,180 @@
+# Task Manager
+
+O Task Manager é uma aplicação web para gerenciar tarefas e tags associadas a essas tarefas. Com este aplicativo, você pode facilmente criar, visualizar, atualizar e excluir tarefas, além de gerenciar as tags relacionadas a essas tarefas.
+
+## Tecnologias Utilizadas
+
+- Node.js
+- Express.js
+- Sequelize (ORM)
+- MySQL
+- Postman (para testes de API)
+
+## Pré-requisitos
+
+- Node.js instalado
+- MySQL instalado e em execução
+- Postman instalado (opcional)
+
+## Configuração
+
+1. Clone o repositório para o seu ambiente local:
+
+```
+git clone https://github.com/seu-usuario/task-manager.git
+```
+
+2. Navegue até o diretório do projeto:
+
+```
+cd task-manager
+```
+
+3. Instale as dependências do Node.js:
+
+```
+npm install
+```
+
+4. Configure as variáveis de ambiente:
+
+Crie um arquivo `.env` na raiz do projeto e defina as seguintes variáveis:
+
+```
+DB_HOST=seu-host-do-banco-de-dados
+DB_PORT=porta-do-banco-de-dados
+DB_USER=seu-usuario-do-banco-de-dados
+DB_PASSWORD=sua-senha-do-banco-de-dados
+DB_DATABASE=nome-do-banco-de-dados
+```
+
+5. Execute o aplicativo:
+
+```
+npm start
+```
+
+O servidor estará em execução em `http://localhost:3000`.
+
+## Uso
+
+Você pode interagir com o aplicativo por meio de uma API RESTful. Aqui estão as principais operações que você pode realizar:
+
+### Tarefas (Tasks)
+
+- **GET /tasks/all**: Obter todas as tarefas.
+- **GET /tasks**: Obter tarefas por título e/ou tags.
+- **POST /tasks**: Criar uma nova tarefa.
+- **PUT /tasks/:id**: Atualizar uma tarefa existente.
+- **DELETE /tasks/:id**: Excluir uma tarefa.
+
+### Tags
+
+- **GET /tags**: Obter todas as tags.
+- **POST /tags**: Criar uma nova tag.
+- **PUT /tags/:id**: Atualizar uma tag existente.
+- **DELETE /tags/:id**: Excluir uma tag.
+
+Certifique-se de usar o Postman ou qualquer outra ferramenta de teste de API para interagir com a aplicação.
+
+## Exemplos de CRUD com o Postman
+
+### Tarefas (Tasks)
+
+#### 1. Obter todas as tarefas
+
+- Método: GET
+- Endpoint: `http://localhost:3000/tasks/all`
+
+#### 2. Obter tarefas por título, data, data de criação e/ou tag
+
+- Método: GET
+- Endpoint: `http://localhost:3000/tasks`
+- Parâmetros de consulta:
+  - `title`: "título da tarefa"
+  - `TagId`: 1
+  - `date`: 2024-04-30T00:00:00.000Z
+  - `createdAt`: 2024-04-30T00:00:00.000Z
+
+#### 3. Criar uma nova tarefa
+
+- Método: POST
+- Endpoint: `http://localhost:3000/tasks`
+- Corpo da requisição (JSON):
+  ```json
+  {
+    "title": "Minha nova tarefa",
+    "description": "Esta é uma descrição da minha tarefa",
+    "date": "2024-04-25",
+    "duration": 60,
+    "tagId": 1
+  }
+  ```
+
+#### 4. Atualizar uma tarefa existente
+
+- Método: PUT
+- Endpoint: `http://localhost:3000/tasks/:id`
+- Substitua `:id` pelo ID da tarefa que deseja atualizar
+- Corpo da requisição (JSON) com os campos a serem atualizados:
+  ```json
+  {
+    "title": "Tarefa atualizada",
+    "description": "Esta é a nova descrição da tarefa",
+    "date": "2024-04-26",
+    "duration": 90,
+    "tagId": 2
+  }
+  ```
+
+#### 5. Excluir uma tarefa
+
+- Método: DELETE
+- Endpoint: `http://localhost:3000/tasks/:id`
+- Substitua `:id` pelo ID da tarefa que deseja excluir
+
+### Tags
+
+#### 1. Obter todas as tags
+
+- Método: GET
+- Endpoint: `http://localhost:3000/tags`
+
+#### 2. Criar uma nova tag
+
+- Método: POST
+- Endpoint: `http://localhost:3000/tags`
+- Corpo da requisição (JSON):
+  ```json
+  {
+    "name": "Nova Tag"
+  }
+  ```
+
+#### 3. Atualizar uma tag existente
+
+- Método: PUT
+- Endpoint: `http://localhost:3000/tags/:id`
+- Substitua `:id` pelo ID da tag que deseja atualizar
+- Corpo da requisição (JSON) com os campos a serem atualizados:
+  ```json
+  {
+    "name": "Tag Atualizada"
+  }
+  ```
+
+#### 4. Excluir uma tag
+
+- Método: DELETE
+- Endpoint: `http://localhost:3000/tags/:id`
+- Substitua `:id` pelo ID da tag que deseja excluir
+
+Você pode usar o Postman para enviar requisições para esses endpoints e interagir com a aplicação.
+
+---
+
+## Considerações inais
+
+- Em caso de maiores dúvidas, entrar em contato:
+
+- [MyWebPage](https://devfelipelimabr.github.io/git-page/)
