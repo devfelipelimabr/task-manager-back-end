@@ -12,6 +12,18 @@ const TagController = {
         }
     },
 
+    async getTagById(req, res) {
+        try {
+            const tag = await Tag.findByPk(req.params.id);
+            if (!tag) {
+                return res.status(404).send({ message: 'Tag não encontrada.' });
+            }
+            res.send(tag);
+        } catch (error) {
+            res.status(500).send({ message: 'Erro ao obter a tag.' });
+        }
+    },
+
     async createTag(req, res) {
         try {
             const tag = await Tag.create(req.body);
