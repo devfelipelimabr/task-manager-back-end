@@ -138,7 +138,7 @@ Certifique-se de usar o Postman ou qualquer outra ferramenta de teste de API par
 #### 1. Obter todas as tags
 
 - Método: GET
-- Endpoint: `http://localhost:3000/tags`
+- Endpoint: `http://localhost:3000/tags/all`
 
 #### 2. Criar uma nova tag
 
