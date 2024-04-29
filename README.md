@@ -138,9 +138,14 @@ Certifique-se de usar o Postman ou qualquer outra ferramenta de teste de API par
 #### 1. Obter todas as tags
 
 - Método: GET
-- Endpoint: `http://localhost:3000/tags/all`
+- Endpoint: `http://localhost:3000/tags`
 
-#### 2. Criar uma nova tag
+#### 2. Obter uma tag específica
+
+- Método: GET
+- Endpoint: `http://localhost:3000/tags/:id`
+
+#### 3. Criar uma nova tag
 
 - Método: POST
 - Endpoint: `http://localhost:3000/tags`
@@ -151,7 +156,7 @@ Certifique-se de usar o Postman ou qualquer outra ferramenta de teste de API par
   }
   ```
 
-#### 3. Atualizar uma tag existente
+#### 4. Atualizar uma tag existente
 
 - Método: PUT
 - Endpoint: `http://localhost:3000/tags/:id`
@@ -163,7 +168,7 @@ Certifique-se de usar o Postman ou qualquer outra ferramenta de teste de API par
   }
   ```
 
-#### 4. Excluir uma tag
+#### 5. Excluir uma tag
 
 - Método: DELETE
 - Endpoint: `http://localhost:3000/tags/:id`
