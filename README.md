@@ -1,3 +1,4 @@
+```markdown
 # Task Manager
 
 O Task Manager é uma aplicação web para gerenciar tarefas e tags associadas a essas tarefas. Com este aplicativo, você pode facilmente criar, visualizar, atualizar e excluir tarefas, além de gerenciar as tags relacionadas a essas tarefas.
@@ -46,6 +47,7 @@ DB_PORT=porta-do-banco-de-dados
 DB_USER=seu-usuario-do-banco-de-dados
 DB_PASSWORD=sua-senha-do-banco-de-dados
 DB_DATABASE=nome-do-banco-de-dados
+JWT_SECRET=sua-chave-secreta-para-o-JWT
 ```
 
 5. Execute o aplicativo:
@@ -71,6 +73,7 @@ Você pode interagir com o aplicativo por meio de uma API RESTful. Aqui estão a
 ### Tags
 
 - **GET /tags**: Obter todas as tags.
+- **GET /tags/:id**: Obter uma tag específica.
 - **POST /tags**: Criar uma nova tag.
 - **PUT /tags/:id**: Atualizar uma tag existente.
 - **DELETE /tags/:id**: Excluir uma tag.
@@ -174,12 +177,38 @@ Certifique-se de usar o Postman ou qualquer outra ferramenta de teste de API par
 - Endpoint: `http://localhost:3000/tags/:id`
 - Substitua `:id` pelo ID da tag que deseja excluir
 
-Você pode usar o Postman para enviar requisições para esses endpoints e interagir com a aplicação.
+### Sign Up (Cadastro de Usuário)
 
----
+1. **Endpoint:** `POST /signup`
+2. **Descrição:** Crie uma nova conta fornecendo um email e uma senha.
+3. **Corpo da Requisição (JSON):**
+   ```json
+   {
+     "email": "seu-email@example.com",
+     "password": "sua-senha"
+   }
+   ```
+4. **Resposta de Sucesso (Status 201):** Retorna os detalhes do novo usuário criado.
+5. **Resposta de Erro (Status 400):** Retorna um erro se o email já estiver em uso.
 
-## Considerações inais
+### Login
 
-- Em caso de maiores dúvidas, entrar em contato:
+1. **Endpoint:** `POST /login`
+2. **Descrição:** Faça login na sua conta fornecendo o email e a senha cadastrados anteriormente.
+3. **Corpo da Requisição (JSON):**
+   ```json
+   {
+     "email": "seu-email@example.com",
+     "password": "sua-senha"
+   }
+   ```
+4. **Resposta de Sucesso (Status 200):** Retorna um token JWT válido.
+5. **Resposta de Erro (Status 401):** Retorna um erro se as credenciais estiverem incorretas.
+
+Você pode usar esses endpoints para interagir com a API e realizar o login e o signup no sistema. Certifique-se de incluir o token JWT retornado na resposta de login em todas as solicitações subsequentes que exigem autenticação, enviando-o no cabeçalho `Authorization` da requisição.
+
+## Considerações Finais
+
+- Em caso de maiores dúvidas, entre em contato.
 
 - [MyWebPage](https://devfelipelimabr.github.io/git-page/)
