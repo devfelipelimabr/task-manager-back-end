@@ -52,7 +52,7 @@ JWT_SECRET=sua-chave-secreta-para-o-JWT
 5. Execute o aplicativo:
 
 ```
-npm start
+node app
 ```
 
 O servidor estará em execução em `http://localhost:3000`.
