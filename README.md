@@ -1,4 +1,3 @@
-```markdown
 # Task Manager
 
 O Task Manager é uma aplicação web para gerenciar tarefas e tags associadas a essas tarefas. Com este aplicativo, você pode facilmente criar, visualizar, atualizar e excluir tarefas, além de gerenciar as tags relacionadas a essas tarefas.
